@@ -29,7 +29,7 @@ const Services = () => (
       <div className="flex-1 flex flex-col justify-start items-center">
         <ServiceCard
           color="bg-[#2952E3]"
-          title="Security gurantee"
+          title="Security guaranteed"
           icon={<BsShieldFillCheck fontSize={21} className="text-white" />}
           subtitle="We always maintain the privacy of our users and the quality of our product      "
         />
