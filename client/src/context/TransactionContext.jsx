@@ -37,7 +37,7 @@ export const TransactionProvider = ({ children }) => {
                 message: transaction.message,
                 keyword: transaction.keyword,
                 amount: parseInt(transaction.amount._hex) / (10 ** 18),
-            }))
+            })).reverse()
 
             console.log(structuredTransactions);
             setTransactions(structuredTransactions);
@@ -85,6 +85,7 @@ export const TransactionProvider = ({ children }) => {
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
             setCurrentAccount(accounts[0]);
             getAllTransactions();
+            location.reload();
 
         } catch (error) {
             console.log(error);
@@ -121,7 +122,7 @@ export const TransactionProvider = ({ children }) => {
             const transactionCount = await transactionContract.getTransactionCount();
             setTransactionCount(transactionCount.toNumber());
 
-            window.reload();
+            location.reload();
 
         } catch (error) {
             console.log(error);
