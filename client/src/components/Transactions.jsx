@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 
-import dummyData  from '../utils/dummyData';
 import { shortenAddress } from '../utils/shortenAddress';
 import { TransactionContext } from '../context/TransactionContext';
 import useFetch from '../hooks/useFetch';

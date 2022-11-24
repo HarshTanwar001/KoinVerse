@@ -37,7 +37,7 @@ export const TransactionProvider = ({ children }) => {
                 message: transaction.message,
                 keyword: transaction.keyword,
                 amount: parseInt(transaction.amount._hex) / (10 ** 18),
-            })).reverse()
+            })).reverse().slice(0, 20)
 
             console.log(structuredTransactions);
             setTransactions(structuredTransactions);
@@ -115,9 +115,9 @@ export const TransactionProvider = ({ children }) => {
             
             setIsLoading(true);
             console.log(`Loading - ${transactionHash.hash}`);
-            setIsLoading(false);
-            console.log(`Success - ${transactionHash.hash}`);
             await transactionHash.wait();
+            console.log(`Success - ${transactionHash.hash}`);
+            setIsLoading(false);
 
             const transactionCount = await transactionContract.getTransactionCount();
             setTransactionCount(transactionCount.toNumber());
