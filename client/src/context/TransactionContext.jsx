@@ -37,7 +37,7 @@ export const TransactionProvider = ({ children }) => {
                 message: transaction.message,
                 keyword: transaction.keyword,
                 amount: parseInt(transaction.amount._hex) / (10 ** 18),
-            })).reverse().slice(0, 20)
+            })).reverse().slice(0, 30)
 
             console.log(structuredTransactions);
             setTransactions(structuredTransactions);
